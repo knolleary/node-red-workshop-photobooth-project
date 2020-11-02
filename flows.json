@@ -1,1 +1,73 @@
-[{"id":"ddeb3b89.ad9748","type":"tab","label":"Flow 1","disabled":false,"info":""}]
+[
+    {
+        "id": "ddeb3b89.ad9748",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "10cd970c.dcde99",
+        "type": "http in",
+        "z": "ddeb3b89.ad9748",
+        "name": "",
+        "url": "/hello",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 140,
+        "y": 140,
+        "wires": [
+            [
+                "ec1f6830.222e38",
+                "43f8e071.77d4a"
+            ]
+        ]
+    },
+    {
+        "id": "ec1f6830.222e38",
+        "type": "template",
+        "z": "ddeb3b89.ad9748",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{{# payload.name }}\n<p>Hello, {{{payload.name}}}!</p>\n{{/ payload.name }}\n{{^ payload.name }}\n<form action=\"/hello\" method=\"GET\">\n    What is your name? <input name=\"name\">\n    <button>Submit</button>\n</form>\n\n\n{{/ payload.name }}\n",
+        "output": "str",
+        "x": 340,
+        "y": 140,
+        "wires": [
+            [
+                "87f3adff.c4e43"
+            ]
+        ]
+    },
+    {
+        "id": "87f3adff.c4e43",
+        "type": "http response",
+        "z": "ddeb3b89.ad9748",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 510,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "43f8e071.77d4a",
+        "type": "debug",
+        "z": "ddeb3b89.ad9748",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 350,
+        "y": 80,
+        "wires": []
+    }
+]
