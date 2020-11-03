@@ -7,55 +7,312 @@
         "info": ""
     },
     {
-        "id": "10cd970c.dcde99",
-        "type": "http in",
+        "id": "95389422.0480c8",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "5967b7da.b44598",
+        "type": "ui_tab",
+        "name": "AI Photo Booth",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "5ecf1e5d.c16c4",
+        "type": "ui_group",
+        "name": "WebCam",
+        "tab": "5967b7da.b44598",
+        "order": 1,
+        "disp": false,
+        "width": "10",
+        "collapse": false
+    },
+    {
+        "id": "cc44de93.d9496",
+        "type": "ui_group",
+        "name": "Objects",
+        "tab": "5967b7da.b44598",
+        "order": 2,
+        "disp": false,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "800f274b.6632d8",
+        "type": "ui_webcam",
         "z": "ddeb3b89.ad9748",
         "name": "",
-        "url": "/hello",
-        "method": "get",
-        "upload": false,
-        "swaggerDoc": "",
-        "x": 140,
-        "y": 140,
+        "group": "5ecf1e5d.c16c4",
+        "order": 1,
+        "width": "10",
+        "height": "7",
+        "countdown": false,
+        "autoStart": false,
+        "hideCaptureButton": true,
+        "showImage": 0,
+        "format": "jpeg",
+        "x": 400,
+        "y": 100,
         "wires": [
             [
-                "ec1f6830.222e38",
-                "43f8e071.77d4a"
+                "f0e86e5b.c2eb5",
+                "deade4b6.926288",
+                "2be0395e.1879b6"
             ]
         ]
     },
     {
-        "id": "ec1f6830.222e38",
-        "type": "template",
+        "id": "f0e86e5b.c2eb5",
+        "type": "debug",
         "z": "ddeb3b89.ad9748",
         "name": "",
-        "field": "payload",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "{{# payload.name }}\n<p>Hello, {{{payload.name}}}!</p>\n{{/ payload.name }}\n{{^ payload.name }}\n<form action=\"/hello\" method=\"GET\">\n    What is your name? <input name=\"name\">\n    <button>Submit</button>\n</form>\n\n\n{{/ payload.name }}\n",
-        "output": "str",
-        "x": 340,
-        "y": 140,
-        "wires": [
-            [
-                "87f3adff.c4e43"
-            ]
-        ]
-    },
-    {
-        "id": "87f3adff.c4e43",
-        "type": "http response",
-        "z": "ddeb3b89.ad9748",
-        "name": "",
-        "statusCode": "",
-        "headers": {},
-        "x": 510,
-        "y": 140,
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 590,
+        "y": 60,
         "wires": []
     },
     {
-        "id": "43f8e071.77d4a",
+        "id": "deade4b6.926288",
+        "type": "change",
+        "z": "ddeb3b89.ad9748",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "filename",
+                "pt": "msg",
+                "to": "'/tmp/webcam_'& $moment().format('YYYY-MM-DD-hhmmss') & '.jpeg'",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 610,
+        "y": 100,
+        "wires": [
+            [
+                "d062ebca.fa31e8"
+            ]
+        ]
+    },
+    {
+        "id": "d062ebca.fa31e8",
+        "type": "file",
+        "z": "ddeb3b89.ad9748",
+        "name": "",
+        "filename": "",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 770,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "bc8cf8a5.78e498",
+        "type": "ui_button",
+        "z": "ddeb3b89.ad9748",
+        "name": "",
+        "group": "5ecf1e5d.c16c4",
+        "order": 2,
+        "width": "9",
+        "height": "1",
+        "passthru": false,
+        "label": "Capture",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "fa-camera fa-2x",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "x": 80,
+        "y": 60,
+        "wires": [
+            [
+                "1491b6df.c56d59"
+            ]
+        ]
+    },
+    {
+        "id": "1491b6df.c56d59",
+        "type": "change",
+        "z": "ddeb3b89.ad9748",
+        "name": "msg.capture",
+        "rules": [
+            {
+                "t": "set",
+                "p": "capture",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 230,
+        "y": 60,
+        "wires": [
+            [
+                "800f274b.6632d8"
+            ]
+        ]
+    },
+    {
+        "id": "1bfbdc10.aade94",
+        "type": "ui_button",
+        "z": "ddeb3b89.ad9748",
+        "name": "Clear",
+        "group": "5ecf1e5d.c16c4",
+        "order": 2,
+        "width": "1",
+        "height": "1",
+        "passthru": false,
+        "label": "",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "fa-trash fa-2x",
+        "payload": "\"\"",
+        "payloadType": "json",
+        "topic": "",
+        "x": 70,
+        "y": 100,
+        "wires": [
+            [
+                "800f274b.6632d8"
+            ]
+        ]
+    },
+    {
+        "id": "8cd39b6c.1e3608",
+        "type": "tensorflowCoco",
+        "z": "ddeb3b89.ad9748",
+        "name": "",
+        "modelUrl": "http://localhost:1880/coco/model.json",
+        "scoreThreshold": 0.5,
+        "passthru": "false",
+        "lineColour": "magenta",
+        "x": 390,
+        "y": 240,
+        "wires": [
+            [
+                "75fbf592.1bde7c",
+                "3e1bfffc.64667"
+            ]
+        ]
+    },
+    {
+        "id": "75fbf592.1bde7c",
         "type": "debug",
         "z": "ddeb3b89.ad9748",
         "name": "",
@@ -66,8 +323,201 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 350,
-        "y": 80,
+        "x": 590,
+        "y": 200,
         "wires": []
+    },
+    {
+        "id": "2936e203.f3245e",
+        "type": "ui_table",
+        "z": "ddeb3b89.ad9748",
+        "group": "cc44de93.d9496",
+        "name": "",
+        "order": 0,
+        "width": "6",
+        "height": "8",
+        "columns": [
+            {
+                "field": "class",
+                "title": "Object Type",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "score",
+                "title": "Score",
+                "width": "",
+                "align": "left",
+                "formatter": "progress",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            }
+        ],
+        "outputs": 1,
+        "cts": true,
+        "x": 390,
+        "y": 360,
+        "wires": [
+            [
+                "afc2661c.8a52a8",
+                "f1fc41c3.1b5d8"
+            ]
+        ]
+    },
+    {
+        "id": "3e1bfffc.64667",
+        "type": "change",
+        "z": "ddeb3b89.ad9748",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$append([],payload.{\"class\":class,\"score\":score*100,\"bbox\":bbox})",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 220,
+        "y": 360,
+        "wires": [
+            [
+                "2936e203.f3245e"
+            ]
+        ]
+    },
+    {
+        "id": "847c5db6.44f4e",
+        "type": "link in",
+        "z": "ddeb3b89.ad9748",
+        "name": "to-webcam",
+        "links": [
+            "23c88371.85c4bc",
+            "70eca315.946a6c"
+        ],
+        "x": 275,
+        "y": 140,
+        "wires": [
+            [
+                "800f274b.6632d8"
+            ]
+        ]
+    },
+    {
+        "id": "afc2661c.8a52a8",
+        "type": "debug",
+        "z": "ddeb3b89.ad9748",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 590,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "90d9565a.3b5ea8",
+        "type": "annotate-image",
+        "z": "ddeb3b89.ad9748",
+        "name": "",
+        "fill": "",
+        "stroke": "#ffC000",
+        "lineWidth": 5,
+        "fontSize": 24,
+        "fontColor": "#ffC000",
+        "x": 600,
+        "y": 420,
+        "wires": [
+            [
+                "70eca315.946a6c"
+            ]
+        ]
+    },
+    {
+        "id": "70eca315.946a6c",
+        "type": "link out",
+        "z": "ddeb3b89.ad9748",
+        "name": "annotated-image-output",
+        "links": [
+            "847c5db6.44f4e"
+        ],
+        "x": 715,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "2be0395e.1879b6",
+        "type": "change",
+        "z": "ddeb3b89.ad9748",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "image",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 200,
+        "y": 240,
+        "wires": [
+            [
+                "8cd39b6c.1e3608"
+            ]
+        ]
+    },
+    {
+        "id": "f1fc41c3.1b5d8",
+        "type": "change",
+        "z": "ddeb3b89.ad9748",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "annotations",
+                "pt": "msg",
+                "to": "$append([],payload.{\"label\": class, \"bbox\": bbox})",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "image",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 420,
+        "y": 420,
+        "wires": [
+            [
+                "90d9565a.3b5ea8"
+            ]
+        ]
     }
 ]

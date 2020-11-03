@@ -2,11 +2,21 @@
     "name": "photobooth-workshop",
     "description": "A Node-RED Project",
     "version": "0.0.1",
-    "dependencies": {},
+    "dependencies": {
+        "node-red": "1.x",
+        "node-red-contrib-tfjs-coco-ssd": "0.5.2",
+        "node-red-dashboard": "2.23.5",
+        "node-red-node-annotate-image": "0.1.0",
+        "node-red-node-ui-table": "0.3.7",
+        "node-red-node-ui-webcam": "0.2.1"
+    },
     "node-red": {
         "settings": {
             "flowFile": "flows.json",
             "credentialsFile": "flows_cred.json"
         }
-    }
+    },
+    "scripts": {
+            "start": "node --max-old-space-size=256 ./node_modules/node-red/red.js --userDir . --settings ./settings.js flows.json"
+        }
 }
